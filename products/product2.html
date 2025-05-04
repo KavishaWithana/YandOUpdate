@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"
+      integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css"
+      integrity="sha512-pmAAV1X4Nh5jA9m+jcvwJXFQvCBi3T17aZ1KWkqXr7g/O2YMvO8rfaa5ETWDuBvRq6fbDjlw4jHL44jNTScaKg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../assets/styles/style.css" />
+  </head>
+
+  <body>
+    <!-- desktop navbar | hidden on mobile-->
+    <header class="bg-white fixed w-full z-50 shadow-sm">
+      <div
+        class="container max-w-6xl mx-auto py-4 hidden lg:flex items-center justify-between"
+      >
+        <!-- logo -->
+        <div>
+          <span class="sr-only">Logo</span>
+          <a href="../index.html" class="">
+            <h1 class="text-lg font-bold">Y&O Garments</h1>
+          </a>
+        </div>
+
+        <!-- desktop navbar content -->
+        <nav>
+          <ul
+            class="flex items-center justify-center font-semibold gap-6 cursor-pointer"
+          >
+            <!-- single link -->
+            <li class="relative group">
+              <a href="../index.html" class="hover:opacity-50">Home </a>
+            </li>
+
+            <!-- single link -->
+            <li class="relative group">
+              <a href="../products.html" class="hover:opacity-50">Products </a>
+            </li>
+
+            <!-- drop down link -->
+            <li class="relative group">
+              <button class="hover:opacity-50">About Y&O</button>
+              <div
+                class="absolute top-0 -left-2 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-300 ease-in-out group-hover:transform z-50 min-w-[250px] transform"
+              >
+                <div class="relative p-6 bg-white rounded-xl shadow-xl w-full">
+                  <div class="relative z-10">
+                    <ul class="text-md">
+                      <li>
+                        <a
+                          href="../story.html"
+                          class="text-gray-600 hover:text-gray-900 py-1 block font-medium"
+                        >
+                          Our Story
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="../mission.html"
+                          class="text-gray-600 hover:text-gray-900 py-1 block font-medium"
+                        >
+                          Our Mission
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="../founderstory.html"
+                          class="text-gray-600 hover:text-gray-900 py-1 block font-medium"
+                        >
+                          Founder's Story
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="../leadership.html"
+                          class="text-gray-600 hover:text-gray-900 py-1 block font-medium"
+                        >
+                          Our Leadership
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- single link -->
+            <li class="relative group">
+              <a href="../contact.html" class="hover:opacity-50">Contact </a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- CTA Button -->
+        <div class="flex">
+          <!-- sign up -->
+          <a
+            class="greatTitle text-xs bg-rose-600 font-light hover:bg-rose-700 text-white p-2"
+            href="#"
+          >
+            <span>
+              Enquiry Form
+              <span aria-hidden="true">→</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- mobile menu | hidden on large devices -->
+    <header class="lg:hidden">
+      <!-- header with logo and menu icon -->
+      <div
+        class="container mx-auto px-4 py-3 flex items-center justify-between fixed top-0 bg-white/30 backdrop-blur-md !z-20"
+      >
+        <!-- logo -->
+        <div>
+          <span class="sr-only">Logo</span>
+          <a href="../index.html" class="">
+            <h1 class="text-lg font-bold">Y&O Garments</h1>
+          </a>
+        </div>
+
+        <!-- menu Icon -->
+        <div id="openMenuIcon">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </div>
+
+      <!-- after opening the menu | initially hidden -->
+      <div
+        id="openedMenu"
+        class="hidden container mx-auto px-4 py-3 h-full fixed top-0 bg-white z-30"
+      >
+        <!-- header with logo and menu icon -->
+        <div class="flex items-center justify-between w-full">
+          <!-- logo -->
+          <div>
+            <span class="sr-only">Logo</span>
+            <a href="../index.html" class="">
+              <h1 class="text-lg font-bold">Y&O Garments</h1>
+            </a>
+          </div>
+
+          <!-- Close Icon -->
+          <div id="closeMenuIcon" class="cursor-pointer lg:hidden">
+            <i class="fa-solid fa-x"></i>
+          </div>
+        </div>
+
+        <!-- Links container -->
+        <div class="h-100">
+          <ul class="flex flex-col space-y-4 mt-12">
+            <!-- single nav link -->
+            <li class="border-b border-slate-300 pb-4">
+              <a
+                href="../index.html"
+                class="w-full flex justify-between align-center"
+              >
+                <p class="text-lg text-gray-800 font-semibold">Home</p>
+              </a>
+            </li>
+
+            <!-- single nav link -->
+            <li class="border-b border-slate-300 pb-4">
+              <a
+                href="../products.html"
+                class="w-full flex justify-between align-center"
+              >
+                <p class="text-lg text-gray-800 font-semibold">Products</p>
+              </a>
+            </li>
+
+            <!-- mega nav link -->
+            <li class="border-b border-slate-300 pb-4" id="products-btn">
+              <button class="w-full flex justify-between align-center">
+                <p class="text-lg text-gray-800 font-semibold">About Us</p>
+                <i class="fa-solid fa-chevron-right text-md text-gray-700"></i>
+              </button>
+            </li>
+
+            <!-- single nav link -->
+            <li class="border-b border-slate-300 pb-4">
+              <a
+                href="../contact.html"
+                class="w-full flex justify-between align-center"
+              >
+                <p class="text-lg text-gray-800 font-semibold">Contact</p>
+              </a>
+            </li>
+
+            <!-- single nav link -->
+            <li class="border-b border-slate-300 pb-4">
+              <a class="w-full flex justify-between align-center">
+                <p class="text-lg text-gray-800 font-semibold">Enquiry Form</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- panel container -->
+        <div class="">
+          <!-- product panel -->
+          <div
+            class="fixed top-0 right-0 h-full w-full bg-white shadow-lg transform translate-x-full transition-transform duration-300"
+            id="about-panel"
+          >
+            <!-- header with back and close button -->
+            <div class="p-6 flex items-center justify-between">
+              <!-- Back Button -->
+              <button
+                id="back-btn"
+                class="text-xl text-blue-500 hover:underline"
+              >
+                <i class="fa-solid fa-arrow-left"></i> Back
+              </button>
+              <!-- Close Icon -->
+              <div id="closeMenuIcon" class="cursor-pointer lg:hidden">
+                <i class="fa-solid fa-x"></i>
+              </div>
+            </div>
+
+            <!-- Content goes here -->
+            <div>
+              <h1 class="p-6 text-2xl font-bold">About Us</h1>
+              <ul class="flex flex-col space-y-4 mt-12 px-4">
+                <!-- single nav link -->
+                <li class="border-b border-slate-300 pb-4">
+                  <a
+                    href="../story.html"
+                    class="w-full flex justify-between align-center"
+                  >
+                    <p class="text-lg text-gray-800 font-semibold">Our Story</p>
+                  </a>
+                </li>
+
+                <!-- single nav link -->
+                <li class="border-b border-slate-300 pb-4">
+                  <a
+                    href="../mission.html"
+                    class="w-full flex justify-between align-center"
+                  >
+                    <p class="text-lg text-gray-800 font-semibold">
+                      Our Mission
+                    </p>
+                  </a>
+                </li>
+
+                <!-- single nav link -->
+                <li class="border-b border-slate-300 pb-4">
+                  <a
+                    href="../founderstory.html"
+                    class="w-full flex justify-between align-center"
+                  >
+                    <p class="text-lg text-gray-800 font-semibold">
+                      Founder's Story
+                    </p>
+                  </a>
+                </li>
+
+                <!-- single nav link -->
+                <li class="border-b border-slate-300 pb-4">
+                  <a
+                    href="../leadership.html"
+                    class="w-full flex justify-between align-center"
+                  >
+                    <p class="text-lg text-gray-800 font-semibold">
+                      Our Leadership
+                    </p>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- product section -->
+    <section class="py-10 md:py-20 max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-20">
+        <!-- image container -->
+        <div class="imageContainer hidden md:block">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <img src="../assets/images/products/product2.webp" alt="" />
+            <img src="../assets/images/products/product2back.webp" alt="" />
+            <img src="../assets/images/products/product2side.webp" alt="" />
+            <img src="../assets/images/products/product2last.webp" alt="" />
+          </div>
+        </div>
+
+        <div class="md:hidden">
+          <!-- swiper -->
+          <div class="swiper productSlider">
+            <!-- wrapper -->
+            <div class="swiper-wrapper">
+              <!-- single slides -->
+              <div class="swiper-slide">
+                <img src="../assets/images/products/product2.webp" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../assets/images/products/product2back.webp" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../assets/images/products/product2side.webp" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../assets/images/products/product2last.webp" alt="" />
+              </div>
+            </div>
+
+            <!-- pagination bullets -->
+            <div
+              class="swiper-pagination !right-0 bg-white !w-fit mx-auto rounded-full p-1"
+            ></div>
+          </div>
+        </div>
+
+        <!-- info container -->
+        <div class="md:pt-4 p-4">
+          <!-- tags -->
+          <div class="flex mb-4">
+            <p class="bg-slate-200 px-3 py-1 rounded-full text-xs font-bold">
+              NEW
+            </p>
+          </div>
+
+          <!-- product name -->
+          <h4 class="text-xl font-bold">Everyday Seamless Crop Tank</h4>
+          <!-- fit type -->
+          <p class="text-slate-500">Body Fit</p>
+
+          <div class="w-full h-px bg-slate-200 mb-8 mt-4"></div>
+
+          <!-- info -->
+          <div class="md:w-lg">
+            <!-- intro -->
+
+            <div>
+              <h4 class="font-bold">Add a little EXTRA</h4>
+              <p class="mt-2">
+                These collections take your training staples and give you
+                something a little bit extra.
+              </p>
+            </div>
+
+            <ul class="list-disc pl-5 text-sm text-gray-700 mt-4">
+              <li>Flattering square neck to the front and back</li>
+              <li>Super soft for everyday wear</li>
+            </ul>
+
+            <!-- size -->
+            <div class="mt-8">
+              <h4 class="font-bold">SIZE & FIT</h4>
+              <ul class="list-disc pl-5 text-sm text-gray-700 mt-4">
+                <li>Cropped fit</li>
+                <li>Model is 5'8" and wears a size XS</li>
+              </ul>
+            </div>
+
+            <!-- Material & Care -->
+            <div class="mt-8">
+              <h4 class="font-bold">MATERIALS & CARE</h4>
+              <ul class="list-disc pl-5 text-sm text-gray-700 mt-4">
+                <li>93% Nylon, 7% Elastane</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <!-- size chart -->
+            <div class="mt-8">
+              <h4>Avaiable Sizes</h4>
+              <div class="flex w-fit gap-10 border border-slate-300 p-4 mt-2">
+                <div>XS</div>
+
+                <div>S</div>
+
+                <div>M</div>
+
+                <div>L</div>
+
+                <div>XL</div>
+
+                <div>XXL</div>
+              </div>
+
+              <div class="mt-2">
+                <a href="#" class="text-blue-500">Size Chart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- products -->
+    <section class="max-w-6xl mx-auto py-10 px-4 md:px-0 mt-20">
+      <!-- main title -->
+      <h2 class="text-2xl md:text-5xl font-bold greatTitle mb-10">
+        Related Products
+      </h2>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <!-- card -->
+        <a href="../products/product1.html">
+          <!-- card Header -->
+          <div class="relative group">
+            <!-- Main Image -->
+            <img
+              src="../assets/images/products/product1.webp"
+              class="transition-opacity duration-250 group-hover:opacity-0"
+              alt=""
+            />
+            <!-- Hover Image -->
+            <img
+              src="../assets/images/products/product1back.webp"
+              class="absolute top-0 left-0 w-full h-full object-cover opacity-0 transition-opacity duration-250 group-hover:opacity-100"
+              alt=""
+            />
+
+            <!-- view now icon -->
+            <div
+              class="absolute top-2 right-2 w-8 h-8 bg-white flex justify-center items-center rounded-full shadow-lg"
+            >
+              <i class="fa-regular fa-heart"></i>
+            </div>
+
+            <!-- tags -->
+            <div class="absolute bottom-2 left-2">
+              <p
+                class="text-xs font-bold px-2 py-1 bg-white rounded-full shadow-sm"
+              >
+                NEW
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <h4 class="text-md">Seamless V Neck Bralette</h4>
+            <h3 class="text-sm text-slate-700">Body fit</h3>
+          </div>
+        </a>
+
+        <!-- card -->
+        <a href="../products/product3.html">
+          <!-- card Header -->
+          <div class="relative group">
+            <!-- Main Image -->
+            <img
+              src="../assets/images/products/product3.webp"
+              class="transition-opacity duration-250 group-hover:opacity-0"
+              alt=""
+            />
+            <!-- Hover Image -->
+            <img
+              src="../assets/images/products/product3back.webp"
+              class="absolute top-0 left-0 w-full h-full object-cover opacity-0 transition-opacity duration-250 group-hover:opacity-100"
+              alt=""
+            />
+
+            <!-- view now icon -->
+            <div
+              class="absolute top-2 right-2 w-8 h-8 bg-white flex justify-center items-center rounded-full shadow-lg"
+            >
+              <i class="fa-regular fa-heart"></i>
+            </div>
+
+            <!-- tags -->
+            <div class="absolute bottom-2 left-2">
+              <p
+                class="text-xs font-bold px-2 py-1 bg-white rounded-full shadow-sm"
+              >
+                NEW
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <h4 class="text-md">Soft Sculpt Cap Sleeve Bralette</h4>
+            <h3 class="text-sm text-slate-700">Slim fit</h3>
+          </div>
+        </a>
+
+        <!-- card -->
+        <a href="../products/product4.html">
+          <!-- card Header -->
+          <div class="relative group">
+            <!-- Main Image -->
+            <img
+              src="../assets/images/products/product4.webp"
+              class="transition-opacity duration-250 group-hover:opacity-0"
+              alt=""
+            />
+            <!-- Hover Image -->
+            <img
+              src="../assets/images/products/product4back.webp"
+              class="absolute top-0 left-0 w-full h-full object-cover opacity-0 transition-opacity duration-250 group-hover:opacity-100"
+              alt=""
+            />
+
+            <!-- view now icon -->
+            <div
+              class="absolute top-2 right-2 w-8 h-8 bg-white flex justify-center items-center rounded-full shadow-lg"
+            >
+              <i class="fa-regular fa-heart"></i>
+            </div>
+
+            <!-- tags -->
+            <div class="absolute bottom-2 left-2">
+              <p
+                class="text-xs font-bold px-2 py-1 bg-white rounded-full shadow-sm"
+              >
+                NEW
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <h4 class="text-md">Everyday Seamless Crop Tank</h4>
+            <h3 class="text-sm text-slate-700">Comfy fit</h3>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- footer banner section  -->
+    <section
+      class="h-[75vh] bg-[url(../assets/images/banner.jpg)] bg-cover bg-center"
+    >
+      <div class="h-full p-10 flex justify-end items-center">
+        <!-- card -->
+        <div class="bg-white w-sm p-8 shadow-xl">
+          <h3 class="greatTitle text-2xl mb-4">Designed by Women, For Women</h3>
+          <p>
+            From concept to creation, every Y&O piece is inspired by the real
+            stories, curves, and lives of women around the world. Let’s redefine
+            what support looks like — together.
+          </p>
+          <div class="mt-4">
+            <button
+              class="greatTitle w-full text-sm bg-blue-600 hover:bg-blue-700 text-white py-2 px-4"
+            >
+              View Products
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="bg-slate-900 text-white p-8 md:p-12 md:pb-4">
+      <!-- grid -->
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Company Info -->
+        <div>
+          <!-- logo -->
+          <h1 class="text-5xl greatTitle text-white">Y&O</h1>
+
+          <p class="mt-2 mb-4 text-sm">
+            Crafting Unforgettable Journeys Across Sri Lanka & the Maldives,
+            offering authentic experiences and lasting memories.
+          </p>
+
+          <div class="flex gap-4 mt-8">
+            <i class="fa-brands fa-facebook-f text-xl"></i>
+            <i class="fa-brands fa-instagram text-xl"></i>
+            <i class="fa-brands fa-tiktok text-xl"></i>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-xl mb-4 main-font greatTitle">Company</h3>
+          <ul class="space-y-1">
+            <li><a href="#" class="text-sm">Home</a></li>
+            <li><a href="#" class="text-sm">About Us</a></li>
+            <li><a href="#" class="text-sm">FAQ</a></li>
+            <li><a href="#" class="text-sm">Free Enquiry</a></li>
+            <li><a href="#" class="text-sm">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Stories -->
+        <div>
+          <h3 class="text-xl mb-4 main-font greatTitle">Stories</h3>
+          <ul class="space-y-1">
+            <li><a href="#" class="text-sm">Blog</a></li>
+            <li><a href="#" class="text-sm">Gallery</a></li>
+          </ul>
+        </div>
+
+        <!-- Privacy Policy -->
+        <div>
+          <h3 class="text-xl mb-4 main-font greatTitle">Support</h3>
+          <ul class="space-y-1">
+            <li><a href="#" class="text-sm">FAQ</a></li>
+            <li><a href="#" class="text-sm">Terms & Conditions</a></li>
+            <li><a href="#" class="text-sm">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Credit -->
+      <div
+        class="max-w-6xl mx-auto md:flex justify-between mt-40 md:mt-44 space-y-2 md:space-y-0 border-t border-slate-50/20 pt-8"
+      >
+        <h6>© 2025 Y&O | All Rights Reserved.</h6>
+        <h6>Designed with ❤️ by Hiru Withana</h6>
+      </div>
+    </footer>
+
+    <script src="../assets/scripts/nav.js"></script>
+  </body>
+</html>
